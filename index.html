@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="control.js"></script>
+    </head>
+    <body>
+        <a-scene physics="gravity:-9.8;" control>
+            <a-assets>
+                <a-asset-item id="runway" src="./assets/road/road.glb"></a-asset-item>
+            </a-assets>
+            <a-entity id="camRig" kinematics-body movement-controls="enabled: true; controls: keyboard; speed: 0.1;">
+                <a-entity camera id="camera" position="0 0.5 0">
+                    <a-entity text="align:center; color:red; value: W/A - forward/backward\n A/D - left/right turn\n Q/E - left/right roll\n Z/X - takeoff/landing\n\nMinimum speed 0.5 before takeoff.\nAt altitude of 5 roll instead of turning.;" position="-0.7 0.5 -1"></a-entity>
+                    <a-entity id="facing" text="align: center; color: red; value: Facing: --" position="0.7 0.7 -1"></a-entity>
+                    <a-entity id="heading" text="align: center; color: red; value: Heading: --" position="0.7 0.6 -1"></a-entity>
+                    <a-entity id="speed" text="align: center; color: red; value: Speed: --" position="0.7 0.5 -1"></a-entity>
+                    <a-entity id="altitude" text="align: center; color: red; value: Altitude: --" position="0.7 0.4 -1"></a-entity>
+                    <a-entity id="altitudegain" text="align: center; color: red; value: Altitude gain: --" position="0.7 0.3 -1"></a-entity>
+                    <a-entity id="xpos" text="align: center; color: red; value: X: --" position="0.7 0.2 -1"></a-entity>
+                    <a-entity id="zpos" text="align: center; color: red; value: Z: --" position="0.7 0.1 -1"></a-entity>
+                </a-camera>
+            </a-entity>
+            <a-entity id="world">
+                <a-plane static-body color="grey" width="2000" height="2000" rotation="-90 0 0"></a-plane>
+                <a-entity id="runwayEntity" scale="2 1 4">
+                    <a-entity gltf-model="#runway" position="0 0.1 4"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 8"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 12"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 16"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 20"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 24"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 28"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 32"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 36"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 40"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 44"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 48"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 52"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 56"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 60"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 64"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 68"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 72"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 76"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 80"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 0"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -4"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -8"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -12"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -16"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -20"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -24"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -28"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -32"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -36"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -40"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -44"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -48"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -52"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -56"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -60"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -64"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -68"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -72"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -76"></a-entity>
+                    <a-entity gltf-model="#runway" position="0 0.1 -80"></a-entity>
+                </a-entity>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
